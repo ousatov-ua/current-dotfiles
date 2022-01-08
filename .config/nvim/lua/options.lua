@@ -61,10 +61,10 @@ set laststatus=2
 set colorcolumn=121
 
 "Telescope
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+nnoremap <space>ff <cmd>Telescope find_files<cr>
+nnoremap <space>fg <cmd>Telescope live_grep<cr>
+nnoremap <space>fb <cmd>Telescope buffers<cr>
+nnoremap <space>fh <cmd>Telescope help_tags<cr>
 
 "Nvim Tree
 nnoremap <space>ee :NvimTreeFocus<CR>
@@ -72,9 +72,13 @@ nnoremap <space>ec :NvimTreeClose<CR>
 nnoremap <space>er :NvimTreeFindFile<CR>
 
 "Close Buffer
-nnoremap <leader>bc :bp\|bd #<CR>
+nnoremap <space>bc :bp\|bd #<CR>
 command! Bonly silent execute "%bd!|norm <C-O>"
-nnoremap <leader>bo :Bonly<CR>
+nnoremap <space>bo :Bonly<CR>
+
+" BufferLine
+nnoremap <C-]> :BufferLineCycleNext<CR>
+nnoremap <C-[> :BufferLineCyclePrev<CR>
 
 set background=light
 let g:PaperColor_Theme_Options = {
@@ -193,3 +197,6 @@ require'nvim-treesitter.configs'.setup {
 }
 
 require('lualine').setup()
+
+-- buffers line
+require("bufferline").setup{}
