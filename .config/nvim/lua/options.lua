@@ -142,6 +142,8 @@ local list = {
 }
 require'nvim-tree'.setup {
   view = {
+    width = 50,
+    side = "left",
     mappings = {
       custom_only = false,
       list = list
@@ -164,9 +166,6 @@ require('telescope').setup{
 
 -- Vgit
 require('vgit').setup()
-
--- Nvim tree
-require('nvim-tree').setup() -- yes, needed to properly setup commands
 
 require'nvim-treesitter.configs'.setup {
   -- One of "all", "maintained" (parsers with maintainers), or a list of languages
@@ -192,3 +191,5 @@ require'nvim-treesitter.configs'.setup {
     additional_vim_regex_highlighting = false,
   },
 }
+
+require('lualine').setup()
