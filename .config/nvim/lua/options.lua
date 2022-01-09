@@ -44,7 +44,7 @@ opt.undodir = vim.fn.stdpath("config") .. "/undo"
 opt.undofile = true
 vim.cmd("au TextYankPost * lua vim.highlight.on_yank {on_visual = true}") -- disabled in visual mode
 -- Give me some fenced codeblock goodness
--- vim.g.markdown_fenced_languages = { "html", "javascript", "typescript", "css", "scss", "lua", "vim" }
+--vim.g.markdown_fenced_languages = { "html", "javascript", "typescript", "css", "scss", "lua", "vim" }
 vim.g.mapleader = ","
 
 vim.cmd([[
@@ -113,7 +113,9 @@ hi Define guifg=#071591 gui=bold
 -- Setup NvimTree
 local tree_cb = require'nvim-tree.config'.nvim_tree_callback
 local list = {
-  { key = {"<CR>", "l", "o", "<2-LeftMouse>"}, cb = tree_cb("edit") }
+  { key = {"<CR>", "l", "o", "<2-LeftMouse>"}, cb = tree_cb("edit") },
+  { key = "y",                            cb = tree_cb("copy") },
+  { key = "c",                            cb = tree_cb("copy_name") }
 }
 require'nvim-tree'.setup {
   view = {

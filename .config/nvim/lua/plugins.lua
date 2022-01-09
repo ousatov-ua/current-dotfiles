@@ -9,13 +9,10 @@ end
 return require('packer').startup(function()
     use 'wbthomason/packer.nvim'
     use 'NLKNguyen/papercolor-theme' -- syntax coloring
-
-    use 'neovim/nvim-lspconfig' -- lsp config
-    use({
+    use {
         'nvim-treesitter/nvim-treesitter',
-        config = get_setup('treesitter'),
-        run = ':TSUpdate',
-        })
+        run = ':TSUpdate'
+    }
     use {
         'kyazdani42/nvim-tree.lua',
         requires = {
@@ -37,8 +34,6 @@ return require('packer').startup(function()
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
-
-    -- show buffers
     use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
 end)
 
