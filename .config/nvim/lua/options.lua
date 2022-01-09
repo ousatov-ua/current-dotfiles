@@ -89,16 +89,8 @@ let g:PaperColor_Theme_Options = {
     \   }
     \ }
 colorscheme PaperColor
-"highlight GitGutterAdd    guifg=#009900 ctermfg=2
-"highlight GitGutterChange guifg=#bbbb00 ctermfg=3
-"highlight GitGutterDelete guifg=#ff2222 ctermfg=1
-
 hi String cterm=bold gui=bold ctermfg=15 guifg=#106b10
 hi Character cterm=bold gui=bold ctermfg=15 guifg=#106b10
-hi! link javaCommentTitle javaDocComment
-hi javaStatement guifg=#071591 gui=bold cterm=bold
-hi javaBoolean guifg=#071591 gui=bold cterm=bold
-hi javaAnnotation guifg=#808000
 hi Conditional guifg=#071591 gui=bold cterm=bold
 hi Repeat guifg=#071591 gui=bold cterm=bold
 hi Todo guifg=#071591
@@ -106,8 +98,6 @@ hi Number guifg=#1740e
 hi Todo guifg=#071591 gui=bold cterm=bold
 hi Statement guifg=#071591 gui=bold cterm=bold
 hi Special guifg=#071591 gui=bold cterm=bold
-hi javaLangObject guifg=#071591 gui=bold cterm=bold
-hi javaSpecialChar guifg=#071591 gui=bold cterm=bold
 hi Operator guifg=#071591 gui=bold cterm=bold
 hi Type guifg=#071591 gui=bold cterm=bold
 hi Function guifg=#071591 gui=bold cterm=bold
@@ -115,27 +105,8 @@ hi Identifier guifg=#071591 gui=bold cterm=bold
 hi Typedef guifg=#071591 gui=bold cterm=bold
 hi Include guifg=#071591 gui=bold
 hi Exception guifg=#071591 gui=bold cterm=bold
-hi javaConstant guifg=#071591 gui=bold cterm=bold
-hi javaExternal guifg=#071591 gui=bold cterm=bold
-hi javaClassDecl guifg=#071591 gui=bold cterm=bold
-hi javaScopeDecl guifg=#071591 gui=bold cterm=bold
-hi javaTypedef guifg=#071591 gui=bold cterm=bold
-hi Keyword guifg=#071591 gui=bold cterm=bold
-hi javaStorageClass guifg=#071591 gui=bold cterm=bold
+hi Keyword guifg=#071591
 hi Boolean guifg=#071591 gui=bold cterm=bold
-hi jsonNumber guifg=#071591 gui=bold cterm=bold
-hi IncSearch ctermbg=81 guifg=#000000 guibg=#f6ebbc
-hi Search ctermbg=81 guifg=#000000 guibg=#f6ebbc
-hi CocUnderline cterm=underline gui=underline guifg=#d90016
-hi CocInfoHighlight cterm=underline gui=underline guifg=#808080
-hi CocHintHighlight cterm=underline gui=underline guifg=#808080
-hi CocWarningHighlight cterm=underline gui=underline guifg=#a66f00
-hi Visual  guifg=#000000 guibg=#c0d8f0 gui=none
-hi jsonString cterm=bold gui=bold ctermfg=15 guifg=#106b10
-hi jsonKeyword guifg=#071591 gui=bold cterm=bold
-hi yamlConstant guifg=#071591 gui=bold cterm=bold
-hi sqlStatement guifg=#071591 gui=bold cterm=bold
-hi sqlKeyword guifg=#071591 gui=bold cterm=bold
 hi Define guifg=#071591 gui=bold
 ]])
 
@@ -148,6 +119,7 @@ require'nvim-tree'.setup {
   view = {
     width = 50,
     side = "left",
+    auto_resize = false,
     mappings = {
       custom_only = false,
       list = list
@@ -200,3 +172,8 @@ require('lualine').setup()
 
 -- buffers line
 require("bufferline").setup{}
+
+
+vim.cmd([[
+unmap <ESC>
+]])
