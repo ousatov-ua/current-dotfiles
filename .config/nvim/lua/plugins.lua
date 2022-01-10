@@ -9,6 +9,17 @@ end
 return require('packer').startup(function()
     use 'wbthomason/packer.nvim'
     use 'NLKNguyen/papercolor-theme' -- syntax coloring
+    use 'EdenEast/nightfox.nvim' -- syntax coloring
+    use 'sainnhe/everforest' -- syntax coloring
+    use 'sainnhe/edge' -- syntax coloring
+    use 'folke/tokyonight.nvim' -- syntax coloring
+    use 'rmehri01/onenord.nvim' -- syntax coloring
+    use 'projekt0n/github-nvim-theme' -- syntax coloring
+    use 'doums/darcula' -- syntax coloring
+    use({
+        'rose-pine/neovim',
+        as = 'rose-pine'
+    })
     use {
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
@@ -35,5 +46,19 @@ return require('packer').startup(function()
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
     use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
+
+    -- LSP
+    use 'neovim/nvim-lspconfig'
+    use 'mfussenegger/nvim-jdtls'
+    -- Autocomplete
+    use 'hrsh7th/cmp-nvim-lsp'
+    use 'hrsh7th/cmp-buffer'
+    use 'hrsh7th/cmp-path'
+    use 'hrsh7th/cmp-cmdline'
+    use 'hrsh7th/nvim-cmp'
+    use 'hrsh7th/cmp-vsnip'
+    use 'hrsh7th/vim-vsnip'
+    -- Colorizer
+    use 'norcalli/nvim-colorizer.lua'
 end)
 

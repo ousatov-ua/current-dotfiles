@@ -3,7 +3,7 @@ opt.backspace = { "indent", "eol", "start" }
 opt.clipboard = "unnamedplus"
 opt.completeopt = "menu,menuone,noselect"
 opt.cursorline = true
-opt.cursorcolumn = true
+opt.cursorcolumn = false
 opt.encoding = "utf-8" -- Set default encoding to UTF-8
 opt.expandtab = true -- Use spaces instead of tabs
 opt.foldenable = false
@@ -80,42 +80,107 @@ nnoremap <space>bo :Bonly<CR>
 nnoremap <C-]> :BufferLineCycleNext<CR>
 nnoremap <C-[> :BufferLineCyclePrev<CR>
 
-set background=light
-let g:PaperColor_Theme_Options = {
-    \   'theme': {
-    \     'default': {
-    \          'transparent_background': 1
-    \     }
-    \   }
-    \ }
-colorscheme PaperColor
-hi String cterm=bold gui=bold ctermfg=15 guifg=#106b10
-hi Character cterm=bold gui=bold ctermfg=15 guifg=#106b10
-hi Conditional guifg=#071591 gui=bold cterm=bold
-hi Repeat guifg=#071591 gui=bold cterm=bold
-hi Todo guifg=#071591
-hi Number guifg=#1740e
-hi Todo guifg=#071591 gui=bold cterm=bold
-hi Statement guifg=#071591 gui=bold cterm=bold
-hi Special guifg=#071591 gui=bold cterm=bold
-hi Operator guifg=#071591 gui=bold cterm=bold
-hi Type guifg=#071591 gui=bold cterm=bold
-hi Function guifg=#071591 gui=bold cterm=bold
-hi Identifier guifg=#071591 gui=bold cterm=bold
-hi Typedef guifg=#071591 gui=bold cterm=bold
-hi Include guifg=#071591 gui=bold
-hi Exception guifg=#071591 gui=bold cterm=bold
-hi Keyword guifg=#071591
-hi Boolean guifg=#071591 gui=bold cterm=bold
-hi Define guifg=#071591 gui=bold
+"let s:schema = "everforest"
+let s:schema = "not_selected"
+
+if s:schema == "PaperColor"
+    set background=light
+    let g:PaperColor_Theme_Options = {
+        \   'theme': {
+        \     'default': {
+        \          'transparent_background': 1
+        \     }
+        \   }
+        \ }
+
+    colorscheme PaperColor
+    hi String cterm=bold gui=bold ctermfg=15 guifg=#106b10
+    hi Character cterm=bold gui=bold ctermfg=15 guifg=#106b10
+    hi Conditional guifg=#071591 gui=bold cterm=bold
+    hi Repeat guifg=#071591 gui=bold cterm=bold
+    hi Todo guifg=#071591
+    hi Number guifg=#1740e
+    hi Todo guifg=#071591 gui=bold cterm=bold
+    hi Statement guifg=#071591 gui=bold cterm=bold
+    hi Special guifg=#071591 gui=bold cterm=bold
+    hi Operator guifg=#071591 gui=bold cterm=bold
+    hi Type guifg=#071591 gui=bold cterm=bold
+    hi Function guifg=#071591 gui=bold cterm=bold
+    hi Identifier guifg=#071591 gui=bold cterm=bold
+    hi Typedef guifg=#071591 gui=bold cterm=bold
+    hi Include guifg=#071591 gui=bold
+    hi Exception guifg=#071591 gui=bold cterm=bold
+    hi Keyword guifg=#071591
+    hi Boolean guifg=#071591 gui=bold cterm=bold
+    hi Define guifg=#071591 gui=bold
+elseif s:schema == "dayFox"
+    colorscheme dayfox
+elseif s:schema == "nightfox"
+    colorscheme nightfox
+elseif s:schema == "nordfox"
+    colorscheme nordfox
+elseif s:schema == "dawnfox"
+    colorscheme dawnfox
+elseif s:schema == 'everforest'
+    set background=light
+    let g:everforest_background = 'medium'
+    let g:everforest_enable_italic = 1
+    let g:everforest_disable_italic_comment = 0
+    let g:everforest_ui_contrast = 'high'
+    let g:everforest_diagnostic_text_highlight = 1
+    colorscheme everforest
+elseif s:schema == 'edge'
+    let g:edge_style = 'neon'
+    let g:edge_enable_italic = 1
+    let g:edge_disable_italic_comment = 0
+    let g:edge_diagnostic_text_highlight = 1
+    colorscheme edge
+elseif s:schema == 'tokyonight'
+    colorscheme tokyonight
+elseif s:schema == 'darkula'
+    colorscheme darcula
+endif
+
+" Config nvim-cmp
+set completeopt=menu,menuone,noselect
 ]])
+
+-- Github theme
+-- require("github-theme").setup({
+--  theme_style = "light",
+--  function_style = "italic",
+--  sidebars = {"qf", "vista_kind", "terminal", "packer"},
+-- })
+
+-- Nightfox color schema
+-- require('nightfox').load('dawnfox')
+
+-- Rose-pine color schema
+-- require('rose-pine').set('moon')
+--
+-- OneNord scheme
+require('onenord').setup({
+  theme = 'light', -- "dark" or "light". Alternatively, remove the option and set vim.o.background instead
+  borders = true, -- Split window borders
+  fade_nc = false, -- Fade non-current windows, making them more distinguishable
+  styles = {
+    diagnostics = "underline", -- Style that is applied to diagnostics: see `highlight-args` for options
+  },
+  disable = {
+    background = false, -- Disable setting the background color
+    cursorline = false, -- Disable the cursorline
+    eob_lines = true, -- Hide the end-of-buffer lines
+  },
+  custom_highlights = {}, -- Overwrite default highlight groups
+  custom_colors = {}, -- Overwrite default colors
+})
 
 -- Setup NvimTree
 local tree_cb = require'nvim-tree.config'.nvim_tree_callback
 local list = {
   { key = {"<CR>", "l", "o", "<2-LeftMouse>"}, cb = tree_cb("edit") },
   { key = "y",                            cb = tree_cb("copy") },
-  { key = "c",                            cb = tree_cb("copy_name") }
+  { key = "c",                            cb = tree_cb("copy_name") },
 }
 require'nvim-tree'.setup {
   view = {
@@ -170,11 +235,100 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 
-require('lualine').setup()
+require('lualine').setup{
+    options = {
+        theme = "onenord"
+   }
+}
 
 -- buffers line
 require("bufferline").setup{}
 
+
+-- Nvim-cmp
+-- Setup nvim-cmp.
+  local cmp = require'cmp'
+  
+
+  cmp.setup({
+    snippet = {
+      -- REQUIRED - you must specify a snippet engine
+      expand = function(args)
+        vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+        -- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+        -- require('snippy').expand_snippet(args.body) -- For `snippy` users.
+        -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
+      end,
+    },
+    mapping = {
+      ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
+      ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
+      ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
+      ['<C-y>'] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
+      ['<C-e>'] = cmp.mapping({
+        i = cmp.mapping.abort(),
+        c = cmp.mapping.close(),
+      }),
+      ['<C-j>'] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+                cmp.select_next_item()
+            else
+                fallback()
+            end
+        end, { 'i', 's', }),
+      ['<C-k>'] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+                cmp.select_prev_item()
+            else
+                fallback()
+            end
+        end, { 'i', 's', }),
+    ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+    },
+    sources = cmp.config.sources({
+      { name = 'nvim_lsp' },
+      { name = 'vsnip' }, -- For vsnip users.
+      -- { name = 'luasnip' }, -- For luasnip users.
+      -- { name = 'ultisnips' }, -- For ultisnips users.
+      -- { name = 'snippy' }, -- For snippy users.
+    }, {
+      { name = 'buffer' },
+    })
+  })
+
+  -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
+  cmp.setup.cmdline('/', {
+    sources = {
+      { name = 'buffer' }
+    }
+  })
+
+  -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+  cmp.setup.cmdline(':', {
+    sources = cmp.config.sources({
+      { name = 'path' }
+    }, {
+      { name = 'cmdline' }
+    })
+  })
+
+  -- Setup lspconfig.
+  -- local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+  -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
+  -- require('lspconfig')['<YOUR_LSP_SERVER>'].setup {
+  --  capabilities = capabilities
+  -- }
+
+-- Colorizer
+--
+require 'colorizer'.setup {
+  'css';
+  'javascript';
+  'lua';
+  html = {
+    mode = 'foreground';
+  }
+}
 
 vim.cmd([[
 unmap <ESC>
