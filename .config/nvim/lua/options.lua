@@ -130,6 +130,7 @@ elseif s:schema == 'everforest'
     let g:everforest_diagnostic_text_highlight = 1
     colorscheme everforest
 elseif s:schema == 'edge'
+    set background=light
     let g:edge_style = 'neon'
     let g:edge_enable_italic = 1
     let g:edge_disable_italic_comment = 0
@@ -139,6 +140,9 @@ elseif s:schema == 'tokyonight'
     colorscheme tokyonight
 elseif s:schema == 'darkula'
     colorscheme darcula
+elseif s:schema == 'melange'
+    set background=light
+    colorscheme melange
 endif
 
 " Config nvim-cmp
@@ -146,11 +150,13 @@ set completeopt=menu,menuone,noselect
 ]])
 
 -- Github theme
--- require("github-theme").setup({
---  theme_style = "light",
---  function_style = "italic",
---  sidebars = {"qf", "vista_kind", "terminal", "packer"},
--- })
+--[[
+require("github-theme").setup({
+    theme_style = "light",
+  function_style = "italic",
+  sidebars = {"qf", "vista_kind", "terminal", "packer"},
+ })
+ ]]
 
 -- Nightfox color schema
 -- require('nightfox').load('dawnfox')
@@ -159,6 +165,7 @@ set completeopt=menu,menuone,noselect
 -- require('rose-pine').set('moon')
 --
 -- OneNord scheme
+
 require('onenord').setup({
   theme = 'light', -- "dark" or "light". Alternatively, remove the option and set vim.o.background instead
   borders = true, -- Split window borders
@@ -172,7 +179,30 @@ require('onenord').setup({
     eob_lines = true, -- Hide the end-of-buffer lines
   },
   custom_highlights = {}, -- Overwrite default highlight groups
-  custom_colors = {}, -- Overwrite default colors
+  custom_colors = {
+    --bg = "#F7F8FA",
+    bg = "#FFFFF8",
+    --[[fg = "#2E3440",
+    fg_light = "#4C566A",
+    gray = "#838FA6",
+    light_gray = "#646A76",
+    cyan = "#3EA1AD",
+    blue = "#3879C5",
+    dark_blue = "#1B40A6",
+    green = "#48A53D",
+    light_green = "#5F9E9D",
+    dark_red = "#C53B40",
+    red = "#CB4F53",
+    light_red = "#D16366",
+    pink = "#E85B7A",
+    dark_pink = "#E44675",
+    orange = "#EE5E25",
+    yellow = "#BA793E",
+    purple = "#9F4ACA",
+    light_purple = "#9665AF",
+    none = "NONE"
+    ]]
+  }, -- Overwrite default colors
 })
 
 -- Setup NvimTree
@@ -238,6 +268,7 @@ require'nvim-treesitter.configs'.setup {
 require('lualine').setup{
     options = {
         theme = "onenord"
+        --theme = "everforest"
    }
 }
 

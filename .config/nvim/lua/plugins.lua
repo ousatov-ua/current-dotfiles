@@ -16,6 +16,7 @@ return require('packer').startup(function()
     use 'rmehri01/onenord.nvim' -- syntax coloring
     use 'projekt0n/github-nvim-theme' -- syntax coloring
     use 'doums/darcula' -- syntax coloring
+    use 'savq/melange'
     use({
         'rose-pine/neovim',
         as = 'rose-pine'
@@ -50,6 +51,7 @@ return require('packer').startup(function()
     -- LSP
     use 'neovim/nvim-lspconfig'
     use 'mfussenegger/nvim-jdtls'
+
     -- Autocomplete
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/cmp-buffer'
