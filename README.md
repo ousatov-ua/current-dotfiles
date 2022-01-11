@@ -4,7 +4,7 @@ Using `brew`
 
 HEAD is currently needed for tree-sitter
 
-`brew install neovim --HEAD'
+`brew install neovim --HEAD`
 
 Run this to install all:
 
