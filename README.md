@@ -6,9 +6,9 @@ HEAD is currently needed for tree-sitter
 
 `brew install neovim --HEAD`
 
-Run this to install all:
+Run this inside `nvim` to install all plugins:
 
-:PackerInstall
+`:PackerInstall`
 
 ## Nerd fonts (Use it!)
 
