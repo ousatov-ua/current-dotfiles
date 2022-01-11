@@ -83,37 +83,7 @@ nnoremap <C-[> :BufferLineCyclePrev<CR>
 "let s:schema = "everforest"
 let s:schema = "not_selected"
 
-if s:schema == "PaperColor"
-    set background=light
-    let g:PaperColor_Theme_Options = {
-        \   'theme': {
-        \     'default': {
-        \          'transparent_background': 1
-        \     }
-        \   }
-        \ }
-
-    colorscheme PaperColor
-    hi String cterm=bold gui=bold ctermfg=15 guifg=#106b10
-    hi Character cterm=bold gui=bold ctermfg=15 guifg=#106b10
-    hi Conditional guifg=#071591 gui=bold cterm=bold
-    hi Repeat guifg=#071591 gui=bold cterm=bold
-    hi Todo guifg=#071591
-    hi Number guifg=#1740e
-    hi Todo guifg=#071591 gui=bold cterm=bold
-    hi Statement guifg=#071591 gui=bold cterm=bold
-    hi Special guifg=#071591 gui=bold cterm=bold
-    hi Operator guifg=#071591 gui=bold cterm=bold
-    hi Type guifg=#071591 gui=bold cterm=bold
-    hi Function guifg=#071591 gui=bold cterm=bold
-    hi Identifier guifg=#071591 gui=bold cterm=bold
-    hi Typedef guifg=#071591 gui=bold cterm=bold
-    hi Include guifg=#071591 gui=bold
-    hi Exception guifg=#071591 gui=bold cterm=bold
-    hi Keyword guifg=#071591
-    hi Boolean guifg=#071591 gui=bold cterm=bold
-    hi Define guifg=#071591 gui=bold
-elseif s:schema == "dayFox"
+if s:schema == "dayFox"
     colorscheme dayfox
 elseif s:schema == "nightfox"
     colorscheme nightfox
@@ -123,10 +93,10 @@ elseif s:schema == "dawnfox"
     colorscheme dawnfox
 elseif s:schema == 'everforest'
     set background=light
-    let g:everforest_background = 'medium'
+    let g:everforest_background = 'hard'
     let g:everforest_enable_italic = 1
     let g:everforest_disable_italic_comment = 0
-    let g:everforest_ui_contrast = 'high'
+    let g:everforest_ui_contrast = 'hard'
     let g:everforest_diagnostic_text_highlight = 1
     colorscheme everforest
 elseif s:schema == 'edge'
@@ -165,7 +135,6 @@ require("github-theme").setup({
 -- require('rose-pine').set('moon')
 --
 -- OneNord scheme
-
 require('onenord').setup({
   theme = 'light', -- "dark" or "light". Alternatively, remove the option and set vim.o.background instead
   borders = true, -- Split window borders
@@ -180,9 +149,9 @@ require('onenord').setup({
   },
   custom_highlights = {}, -- Overwrite default highlight groups
   custom_colors = {
-    --bg = "#F7F8FA",
     bg = "#FFFFF8",
-    --[[fg = "#2E3440",
+    -- bg = "#F7F8FA",
+    fg = "#2E3440",
     fg_light = "#4C566A",
     gray = "#838FA6",
     light_gray = "#646A76",
@@ -201,7 +170,6 @@ require('onenord').setup({
     purple = "#9F4ACA",
     light_purple = "#9665AF",
     none = "NONE"
-    ]]
   }, -- Overwrite default colors
 })
 
@@ -268,19 +236,16 @@ require'nvim-treesitter.configs'.setup {
 require('lualine').setup{
     options = {
         theme = "onenord"
-        --theme = "everforest"
+        -- theme = "everforest"
    }
 }
 
 -- buffers line
 require("bufferline").setup{}
 
-
--- Nvim-cmp
+-- ### Nvim-cmp ### - autocomplete
 -- Setup nvim-cmp.
   local cmp = require'cmp'
-  
-
   cmp.setup({
     snippet = {
       -- REQUIRED - you must specify a snippet engine
@@ -355,6 +320,7 @@ require("bufferline").setup{}
 require 'colorizer'.setup {
   'css';
   'javascript';
+  'vim';
   'lua';
   html = {
     mode = 'foreground';

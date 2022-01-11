@@ -1,4 +1,3 @@
-
 vim.api.nvim_command("packadd packer.nvim")
 -- returns the require for use in `config` parameter of packer's use
 -- expects the name of the config file
@@ -8,19 +7,15 @@ end
 
 return require('packer').startup(function()
     use 'wbthomason/packer.nvim'
-    use 'NLKNguyen/papercolor-theme' -- syntax coloring
-    use 'EdenEast/nightfox.nvim' -- syntax coloring
-    use 'sainnhe/everforest' -- syntax coloring
-    use 'sainnhe/edge' -- syntax coloring
-    use 'folke/tokyonight.nvim' -- syntax coloring
+    -- use 'EdenEast/nightfox.nvim' -- syntax coloring
+    -- use 'sainnhe/everforest' -- syntax coloring
+    -- use 'ousatov-ua/everforest' -- syntax coloring
+    -- use 'sainnhe/edge' -- syntax coloring
+    -- use 'folke/tokyonight.nvim' -- syntax coloring
     use 'rmehri01/onenord.nvim' -- syntax coloring
-    use 'projekt0n/github-nvim-theme' -- syntax coloring
-    use 'doums/darcula' -- syntax coloring
-    use 'savq/melange'
-    use({
-        'rose-pine/neovim',
-        as = 'rose-pine'
-    })
+    -- use 'projekt0n/github-nvim-theme' -- syntax coloring
+    -- use 'doums/darcula' -- syntax coloring
+    -- use 'savq/melange'
     use {
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
