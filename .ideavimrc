@@ -1,0 +1,60 @@
+let mapleader = ","
+
+" Project view
+set NERDTree
+nmap <space>ee :NERDTreeFocus<CR>
+nmap <space>ec :NERDTreeToggle<CR>
+let g:NERDTreeMapActivateNode = 'l'
+
+" Windows
+nmap <space>eh <Action>(HideAllWindows)
+nmap <space>er <Action>(SelectInProjectView)
+nmap <space>de <Action>(ActivateDatabaseToolWindow)
+nmap <space>me <Action>(ActivateMavenToolWindow)
+nmap <space>ce <Action>(ToolWindowContextMenu)
+nmap <space>sc <Action>(HideSideWindows)
+nmap <space>vo <Action>(ActivateTerminalToolWindow)
+nmap <space>gg <Action>(ActivateCommitToolWindow)
+
+" Copy-paste
+set clipboard+=unnamed
+set clipboard+=unnamedplus
+
+xnoremap p "_dP
+xnoremap x "_d
+
+
+set visualbell
+set noerrorbells
+set relativenumber
+set number
+
+" Navigation for code related things
+nmap gi <Action>(GotoImplementation)
+nmap gs <Action>(GotoSuperMethod)
+nmap gr <Action>(FindUsages)
+nmap gh <Action>(TypeHierarchy)
+nmap gl <Action>(GotoDeclaration)
+
+nmap <C-o> <Action>(Back)
+nmap <C-i> <Action>(Forward)
+
+" Reformat code
+nmap <leader>ff <Action>(ReformatCode)
+
+nmap <leader>fi <Action>(OptimizeImports)
+nmap <leader>jj <Action>(QuickJavaDoc)
+nmap <leader>ee <Action>(ShowErrorDescription)
+nmap <leader>ef <Action>(ShowIntentionActions)
+nmap <leader>bo <Action>(CloseAllEditorsButActive)
+nmap <leader>bc <Action>(CloseEditor)
+nmap <leader>ba <Action>(CloseAllEditors)
+nmap <leader>rn <Action>(RenameElement)
+
+"Find everywhere
+nmap <leader>fr <Action>(SearchEverywhere)
+
+" One more command: Maven.Reimport
+nmap <leader>pu <Action>(Maven.ReimportProject)
+
+

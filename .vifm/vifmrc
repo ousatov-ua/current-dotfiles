@@ -1,0 +1,3 @@
+set dotfiles
+colorscheme solarized-light
+set vicmd=nvim
