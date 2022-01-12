@@ -10,10 +10,22 @@ require('onenord').setup({
     cursorline = false, -- Disable the cursorline
     eob_lines = true, -- Hide the end-of-buffer lines
   },
-  custom_highlights = {}, -- Overwrite default highlight groups
+
+  styles = {
+    comments = "NONE", -- Style that is applied to comments: see `highlight-args` for options
+    strings = "NONE", -- Style that is applied to strings: see `highlight-args` for options
+    keywords = "bold", -- Style that is applied to keywords: see `highlight-args` for options
+    functions = "NONE", -- Style that is applied to functions: see `highlight-args` for options
+    variables = "NONE", -- Style that is applied to variables: see `highlight-args` for options
+    diagnostics = "underline", -- Style that is applied to diagnostics: see `highlight-args` for options
+  },
+
+
+-- Overwrite default colors
   custom_colors = {
     bg = "#FFFFF8",
     light_gray = "#808080",
+    cyan = "#15878B"
     --[[
     bg = "#F7F8FA",
     fg = "#2E3440",
@@ -37,4 +49,24 @@ require('onenord').setup({
     none = "NONE"
     ]]
   }, -- Overwrite default colors
+})
+
+local colors = require("onenord.colors").load()
+
+require('onenord').setup({
+
+  -- Overwrite default highlight groups
+  custom_highlights = {
+        TSConstructor = { fg = colors.cyan },
+        TSType = { fg = colors.cyan },
+        TSOperator = {fg = colors.fg},
+        TSKeyword = {fg = colors.dark_blue},
+        TSKeywordReturn = {fg = colors.dark_blue},
+        TSVariable = {fg = colors.fg},
+        TSAttribute = {fg = colors.yellow},
+        TSTypeBuiltin = {fg = colors.dark_blue},
+        TSVariableBuiltin = {fg = colors.dark_blue},
+        TSParameter = {fg = colors.purple},
+        TSMethod = {fg = colors.fg},
+  },
 })

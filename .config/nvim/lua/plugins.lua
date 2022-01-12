@@ -19,6 +19,7 @@ return require('packer').startup(function()
             'nvim-treesitter/nvim-treesitter'
         }
     }
+    use 'nvim-treesitter/playground'
     use {
         'kyazdani42/nvim-tree.lua',
         requires = {
