@@ -8,18 +8,16 @@ end
 
 return require('packer').startup(function()
     use 'wbthomason/packer.nvim'
-    -- use 'EdenEast/nightfox.nvim' -- syntax coloring
-    -- use 'sainnhe/everforest' -- syntax coloring
-    -- use 'ousatov-ua/everforest' -- syntax coloring
-    -- use 'sainnhe/edge' -- syntax coloring
-    -- use 'folke/tokyonight.nvim' -- syntax coloring
     use 'rmehri01/onenord.nvim' -- syntax coloring
-    -- use 'projekt0n/github-nvim-theme' -- syntax coloring
-    -- use 'doums/darcula' -- syntax coloring
-    -- use 'savq/melange'
     use {
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
+    }
+    use {
+        'nvim-treesitter/nvim-treesitter-refactor',
+         requires = {
+            'nvim-treesitter/nvim-treesitter'
+        }
     }
     use {
         'kyazdani42/nvim-tree.lua',

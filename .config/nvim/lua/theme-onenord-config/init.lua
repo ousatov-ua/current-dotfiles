@@ -13,7 +13,7 @@ require('onenord').setup({
   custom_highlights = {}, -- Overwrite default highlight groups
   custom_colors = {
     bg = "#FFFFF8",
-    -- 
+    light_gray = "#808080",
     --[[
     bg = "#F7F8FA",
     fg = "#2E3440",
