@@ -26,6 +26,11 @@ Copy `/useful/xterm-24bit.terminfo` to `~/`
 
 Install Oh my szh: <https://ohmyz.sh>
 
+## iTerm2
+
+It is better to use iTerm2!!!
+Font - Ubuntu Mono Nerd font, regular 16, v/i =  100, n/n = 143
+
 ## Alacritty
 
 Install alacritty <https://github.com/alacritty/alacritty>
