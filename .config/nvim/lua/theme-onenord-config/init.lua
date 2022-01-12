@@ -2,9 +2,6 @@ require('onenord').setup({
   theme = 'light', -- "dark" or "light". Alternatively, remove the option and set vim.o.background instead
   borders = true, -- Split window borders
   fade_nc = false, -- Fade non-current windows, making them more distinguishable
-  styles = {
-    diagnostics = "underline", -- Style that is applied to diagnostics: see `highlight-args` for options
-  },
   disable = {
     background = false, -- Disable setting the background color
     cursorline = false, -- Disable the cursorline
@@ -12,7 +9,7 @@ require('onenord').setup({
   },
 
   styles = {
-    comments = "NONE", -- Style that is applied to comments: see `highlight-args` for options
+    comments = "italic", -- Style that is applied to comments: see `highlight-args` for options
     strings = "bold", -- Style that is applied to strings: see `highlight-args` for options
     keywords = "bold", -- Style that is applied to keywords: see `highlight-args` for options
     functions = "NONE", -- Style that is applied to functions: see `highlight-args` for options
@@ -57,11 +54,11 @@ require('onenord').setup({
 
   -- Overwrite default highlight groups
   custom_highlights = {
-        TSConstructor = { fg = colors.cyan },
-        TSType = { fg = colors.cyan },
+        TSConstructor = { fg = colors.cyan, style = "bold" },
+        TSType = { fg = colors.cyan, style="bold" },
         TSOperator = {fg = colors.fg},
         TSKeyword = {fg = colors.dark_blue},
-        TSKeywordReturn = {fg = colors.dark_blue},
+        TSKeywordReturn = {fg = colors.dark_blue, style="bold"},
         TSVariable = {fg = colors.fg},
         TSAttribute = {fg = colors.yellow},
         TSTypeBuiltin = {fg = colors.dark_blue},
