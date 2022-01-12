@@ -22,7 +22,8 @@ require('onenord').setup({
   custom_colors = {
     bg = "#FFFFF8",
     light_gray = "#808080",
-    cyan = "#15878B"
+    cyan = "#15878B",
+    purple = "#BC17CA",
     --[[
     bg = "#F7F8FA",
     fg = "#2E3440",
@@ -60,10 +61,11 @@ require('onenord').setup({
         TSKeyword = {fg = colors.dark_blue},
         TSKeywordReturn = {fg = colors.dark_blue, style="bold"},
         TSVariable = {fg = colors.fg},
+        TSField = {fg = colors.purple, style="bold"},
         TSAttribute = {fg = colors.yellow},
         TSTypeBuiltin = {fg = colors.dark_blue},
         TSVariableBuiltin = {fg = colors.dark_blue},
-        TSParameter = {fg = colors.purple},
+        TSParameter = {fg = colors.pink},
         TSMethod = {fg = colors.fg},
   },
 })
