@@ -19,7 +19,7 @@ vim.o.lazyredraw = true
 opt.linebreak = true -- Stop words being broken on wrap
 opt.number = true -- Show line numbers
 opt.list = true -- Show some invisible characters
-opt.listchars = { tab = " ", trail = "·" }
+opt.listchars = { tab = " ", trail = "·", nbsp = "␣" }
 opt.relativenumber = true
 opt.scrolloff = 4 -- Lines of context
 opt.shiftround = true -- Round indent
@@ -36,7 +36,6 @@ opt.tabstop = 4 -- Number of spaces tabs count for
 opt.termguicolors = true -- You will have bad experience for diagnostic messages when it's default 4000.
 vim.o.whichwrap = vim.o.whichwrap .. "<,>" -- Wrap movement between lines in edit mode with arrows
 opt.wrap = true
--- opt.cc = "80"
 opt.mouse = "a"
 opt.guicursor =
   "n-v-c-sm:block-blinkwait50-blinkon50-blinkoff50,i-ci-ve:ver25-Cursor-blinkon100-blinkoff100,r-cr-o:hor20"
