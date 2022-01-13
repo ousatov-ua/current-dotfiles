@@ -1,3 +1,11 @@
+vim.o.background = "light"
+local colors = require("onenord.colors").load()
+colors.bg = "#FFFFF8"
+colors.light_gray = "#808080"
+colors.cyan = "#15878B"
+colors.purple = "#6F0F86"
+colors.light_purple = "#BC17CA"
+
 require('onenord').setup({
   theme = 'light', -- "dark" or "light". Alternatively, remove the option and set vim.o.background instead
   borders = true, -- Split window borders
@@ -19,12 +27,9 @@ require('onenord').setup({
 
 
 -- Overwrite default colors
-  custom_colors = {
-    bg = "#FFFFF8",
-    light_gray = "#808080",
-    cyan = "#15878B",
-    purple = "#BC17CA",
+  custom_colors = colors,
     --[[
+    {
     bg = "#F7F8FA",
     fg = "#2E3440",
     fg_light = "#4C566A",
@@ -46,12 +51,6 @@ require('onenord').setup({
     light_purple = "#9665AF",
     none = "NONE"
     ]]
-  }, -- Overwrite default colors
-})
-
-local colors = require("onenord.colors").load()
-
-require('onenord').setup({
 
   -- Overwrite default highlight groups
   custom_highlights = {
@@ -65,7 +64,7 @@ require('onenord').setup({
         TSAttribute = {fg = colors.yellow},
         TSTypeBuiltin = {fg = colors.dark_blue},
         TSVariableBuiltin = {fg = colors.dark_blue},
-        TSParameter = {fg = colors.pink},
+        TSParameter = {fg = colors.light_purple},
         TSMethod = {fg = colors.fg},
   },
 })
