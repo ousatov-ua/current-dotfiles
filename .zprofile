@@ -19,14 +19,6 @@ alias mc='LC_ALL=en_US.UTF-8 mc'
 alias 'vim'=/usr/local/bin/nvim
 #alias python='/usr/local/bin/python3'
 
-#OktaAWSCLI
-if [[ -f "$HOME/.okta/bash_functions" ]]; then
-    . "$HOME/.okta/bash_functions"
-fi
-if [[ -d "$HOME/.okta/bin" && ":$PATH:" != *":$HOME/.okta/bin:"* ]]; then
-    PATH="$HOME/.okta/bin:$PATH"
-fi
-
 export PATH="$PATH:/usr/local/Cellar/mongodb-community@3.6/3.6.18/bin"
 export PATH=$PATH:$HOME/.asdf/shims
 
