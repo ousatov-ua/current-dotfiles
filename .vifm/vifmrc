@@ -1,3 +1,4 @@
 set dotfiles
 colorscheme dwmlight
 set vicmd=nvim
+set notrash
