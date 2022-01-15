@@ -117,3 +117,4 @@ export EDITOR=nvim
 export PATH="/usr/local/sbin:$PATH"
 
 source <(kubectl completion zsh)
+source <(helm completion zsh)
