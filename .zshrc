@@ -1,8 +1,11 @@
+export ZDOTDIR="/Users/alus/.zsh_env"
+export HISTFILE="/Users/alus/.zsh_env/.zsh_history"
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 # Path to your oh-my-zsh installation.
 export TERM=xterm-24bit
 export ZSH="/Users/alus/.oh-my-zsh"
+
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -116,5 +119,7 @@ export EDITOR=nvim
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 export PATH="/usr/local/sbin:$PATH"
 
+# Autocomplete for kubectl
 source <(kubectl completion zsh)
+# Autocomplete for helm
 source <(helm completion zsh)
