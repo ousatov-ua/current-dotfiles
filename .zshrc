@@ -3,7 +3,6 @@
 # Path to your oh-my-zsh installation.
 export TERM=xterm-24bit
 export ZSH="/Users/alus/.oh-my-zsh"
-export JDTLS_HOME="/Users/alus/opt/jdt_ls_server"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -27,7 +26,7 @@ ZSH_THEME="robbyrussell"
 # HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
-DISABLE_AUTO_UPDATE="true"
+DISABLE_AUTO_UPDATE="false"
 
 # Uncomment the following line to automatically update without prompting.
 # DISABLE_UPDATE_PROMPT="true"
@@ -85,13 +84,6 @@ export PATH=$PATH:$HOME/.asdf/shims
 setopt nobeep autocd
 CLICOLOR=1
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-if type rg &> /dev/null; then
-  export FZF_DEFAULT_COMMAND='rg --files'
-  export FZF_DEFAULT_OPTS='-m --height 50% --border'
-fi
-
 #alias python="/usr/local/bin/python3"
 alias vim="nvim"
 export EDITOR=nvim
@@ -123,3 +115,5 @@ export EDITOR=nvim
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 export PATH="/usr/local/sbin:$PATH"
+
+source <(kubectl completion zsh)
