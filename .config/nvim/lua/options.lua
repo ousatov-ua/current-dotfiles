@@ -50,6 +50,19 @@ vim.cmd("au TextYankPost * lua vim.highlight.on_yank {on_visual = true}") -- dis
 vim.g.mapleader = ","
 
 vim.cmd([[
+
+"Window resize left
+let @h="\<C-w>10>"
+
+"Window resize right
+let @l="\<C-w>10<"
+
+"Window resize up
+let @k="\<C-w>5+"
+
+"Window resize down
+let @j="\<C-w>5-"
+
 "Copy-paste settings
 
 "set clipboard=unnamedplus
