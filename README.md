@@ -34,3 +34,5 @@ Font - Ubuntu Mono Nerd font, regular 16, v/i =  100, n/n = 143
 ## Alacritty
 
 Install alacritty <https://github.com/alacritty/alacritty>
+
+## Run :checkhealth at the end and resolve errors

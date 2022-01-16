@@ -51,6 +51,12 @@ vim.g.mapleader = ","
 
 vim.cmd([[
 
+"To disable Perl support:
+let g:loaded_perl_provider = 0
+
+" To disable Ruby provider
+let g:loaded_ruby_provider = 0
+
 "Window resize left
 let @h="\<C-w>10>"
 
