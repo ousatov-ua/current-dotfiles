@@ -3,7 +3,7 @@ export HISTFILE="/Users/alus/.zsh_env/.zsh_history"
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 # Path to your oh-my-zsh installation.
-export TERM=xterm-24bit
+export TERM="xterm-24bit"
 export ZSH="/Users/alus/.oh-my-zsh"
 
 
@@ -11,7 +11,9 @@ export ZSH="/Users/alus/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+#ZSH_THEME="warlord"
 ZSH_THEME="robbyrussell"
+#ZSH_THEME="powerlevel9k/powerlevel9k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -80,7 +82,6 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 #
 export PATH="/usr/local/opt/postgresql@11/bin:$PATH"
-export PATH=$PATH:$HOME/.asdf/shims
 
 setopt nobeep autocd
 CLICOLOR=1
@@ -121,3 +122,4 @@ export PATH="/usr/local/sbin:$PATH"
 source <(kubectl completion zsh)
 # Autocomplete for helm
 source <(helm completion zsh)
+
