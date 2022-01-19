@@ -15,7 +15,7 @@ Run this inside `nvim` to install all plugins:
 <https://github.com/ryanoasis/nerd-fonts>
 
 `brew tap homebrew/cask-fonts`
-`brew install --cask font-hack-nerd-font`
+`brew install --cask font-robotomono-nerd-font`
 
 ## 24 bit for tmux
 
