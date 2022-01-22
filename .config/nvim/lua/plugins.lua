@@ -1,3 +1,4 @@
+
 vim.api.nvim_command("packadd packer.nvim")
 -- returns the require for use in `config` parameter of packer's use
 -- expects the name of the config file
@@ -27,6 +28,12 @@ return require('packer').startup(function()
     use 'tpope/vim-fugitive'
     use {
         'tanvirtin/vgit.nvim',
+        requires = {
+            'nvim-lua/plenary.nvim'
+        }
+    }
+    use {
+    'lewis6991/gitsigns.nvim',
         requires = {
             'nvim-lua/plenary.nvim'
         }
