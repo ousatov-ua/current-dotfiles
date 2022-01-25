@@ -1,8 +1,6 @@
 
 vim.api.nvim_command("packadd packer.nvim")
 -- returns the require for use in `config` parameter of packer's use
--- expects the name of the config file
-function get_setup(name)
   return string.format('require("setup/%s")', name)
 end
 
@@ -33,7 +31,7 @@ return require('packer').startup(function()
         }
     }
     use {
-    'lewis6991/gitsigns.nvim',
+    'lewis6991/gitsigns.nvim', -- very useful for Git changes preview etc
         requires = {
             'nvim-lua/plenary.nvim'
         }
