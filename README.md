@@ -29,6 +29,20 @@ Copy `/useful/xterm-24bit.terminfo` to `~/`
 
 Install Oh my szh: <https://ohmyz.sh>
 
+To upgrade custom plugins put this to $ZSH/tools/upgrade.sh:
+
+```szh
+printf "\n${BLUE}%s${RESET}\n" "Updating custom plugins"
+cd custom/plugins
+
+for plugin in */; do
+  if [ -d "$plugin/.git" ]; then
+     printf "${YELLOW}%s${RESET}\n" "${plugin%/}"
+     git -C "$plugin" pull
+  fi
+done
+```
+
 ## Kitty
 
 Install kitty
