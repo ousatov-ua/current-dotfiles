@@ -1,10 +1,16 @@
 # Dotfiles
 
-Using `brew`
+## Install neovim
+
+Using `brew`:
 
 HEAD is currently needed for tree-sitter
 
 `brew install neovim --HEAD`
+
+To upgrade:
+
+`brew upgrade neovim --fetch-HEAD`
 
 Run this inside `nvim` to install all plugins:
 
