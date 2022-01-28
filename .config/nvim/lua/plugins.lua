@@ -1,6 +1,8 @@
 
 vim.api.nvim_command("packadd packer.nvim")
 -- returns the require for use in `config` parameter of packer's use
+-- expects the name of the config file
+function get_setup(name)
   return string.format('require("setup/%s")', name)
 end
 
@@ -31,10 +33,10 @@ return require('packer').startup(function()
         }
     }
     use {
-    'lewis6991/gitsigns.nvim', -- very useful for Git changes preview etc
+    'lewis6991/gitsigns.nvim',
         requires = {
             'nvim-lua/plenary.nvim'
-        }
+    	}
     }
     use {
         'nvim-lualine/lualine.nvim',
@@ -53,8 +55,11 @@ return require('packer').startup(function()
     use 'hrsh7th/cmp-cmdline'
     use 'windwp/nvim-autopairs'
     use 'hrsh7th/nvim-cmp'
-    use 'hrsh7th/cmp-vsnip'
-    use 'hrsh7th/vim-vsnip'
+    use "saadparwaiz1/cmp_luasnip" -- snippet completions
+
+    -- snippets
+    use "L3MON4D3/LuaSnip" --snippet engine
+    use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
     -- Colorizer
     use 'norcalli/nvim-colorizer.lua'
 end)
