@@ -66,6 +66,7 @@ require('onenord').setup({
         TSVariableBuiltin = {fg = colors.dark_blue},
         TSParameter = {fg = colors.light_purple},
         TSMethod = {fg = colors.fg},
-        TSConstant = {fg = colors.purple, style = "italic"}
+        TSConstant = {fg = colors.purple, style = "italic"},
+        xmlTagName = { fg = colors.blue, style="bold"}
   },
 })
