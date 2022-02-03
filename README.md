@@ -56,3 +56,14 @@ Install kitty
 `brew install kitty`
 
 ## Run :checkhealth at the end and resolve errors
+
+## Enable AAC + Aptx on MacOSX
+
+
+`sudo defaults write bluetoothaudiod "Enable AptX codec" -bool true`
+`sudo defaults write bluetoothaudiod "AAC Bitrate" 320`
+`sudo defaults write bluetoothaudiod "Enable AAC codec" -bool false`
+
+To check:
+
+`sudo defaults read bluetoothaudiod`
