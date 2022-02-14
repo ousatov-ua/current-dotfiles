@@ -18,7 +18,7 @@ require('onenord').setup({
 
   styles = {
     comments = "italic", -- Style that is applied to comments: see `highlight-args` for options
-    strings = "bold", -- Style that is applied to strings: see `highlight-args` for options
+    strings = "NONE", -- Style that is applied to strings: see `highlight-args` for options
     keywords = "bold", -- Style that is applied to keywords: see `highlight-args` for options
     functions = "NONE", -- Style that is applied to functions: see `highlight-args` for options
     variables = "NONE", -- Style that is applied to variables: see `highlight-args` for options
