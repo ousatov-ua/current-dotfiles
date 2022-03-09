@@ -11,7 +11,7 @@ require('onenord').setup({
   borders = true, -- Split window borders
   fade_nc = false, -- Fade non-current windows, making them more distinguishable
   disable = {
-    background = true, -- Disable setting the background color
+    background = false, -- Disable setting the background color
     cursorline = false, -- Disable the cursorline
     eob_lines = true, -- Hide the end-of-buffer lines
   },
@@ -66,6 +66,7 @@ require('onenord').setup({
         TSVariableBuiltin = {fg = colors.dark_blue, style="bold"},
         TSParameter = {fg = colors.light_purple},
         TSMethod = {fg = colors.fg},
+        TSString = {fg = colors.green, style="bold"},
         TSConstant = {fg = colors.purple, style = "italic"},
         xmlTagName = { fg = colors.blue, style="bold"},
         TSOperator = {fg = colors.yellow},
