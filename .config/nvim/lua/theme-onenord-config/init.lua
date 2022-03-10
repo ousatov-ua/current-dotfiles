@@ -11,7 +11,7 @@ require('onenord').setup({
   borders = true, -- Split window borders
   fade_nc = false, -- Fade non-current windows, making them more distinguishable
   disable = {
-    background = false, -- Disable setting the background color
+    background = true, -- Disable setting the background color
     cursorline = false, -- Disable the cursorline
     eob_lines = true, -- Hide the end-of-buffer lines
   },
