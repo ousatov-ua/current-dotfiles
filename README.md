@@ -20,11 +20,16 @@ Run this inside `nvim` to install all plugins:
 
 <https://github.com/ryanoasis/nerd-fonts>
 
+Use from ./other/fonts/
+
+Ubuntu mono is the best for now
+
 `brew tap homebrew/cask-fonts`
 
 `brew install --cask font-inconsolata-nerd-font`
 
 `brew install --cask font-robotomono-nerd-font`
+
 narrow: `brew install --cask font-victor-mono-nerd-font`
 
 For victor-mono remove 'italic' to use in Jetbrains IDEA
