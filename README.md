@@ -24,6 +24,8 @@ Use from ./other/fonts/
 
 Victor mono is the best for now Kitty
 
+Can be installed from `other/fonts/VictorMono-Nerd.zip` or via brew:
+
 `brew tap homebrew/cask-fonts`
 
 `brew install --cask font-victor-mono-nerd-font`
