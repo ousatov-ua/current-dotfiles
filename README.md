@@ -22,7 +22,7 @@ Run this inside `nvim` to install all plugins:
 
 Use from ./other/fonts/
 
-Ubuntu mono is the best for now
+Inconsolata is the best for now
 
 `brew tap homebrew/cask-fonts`
 

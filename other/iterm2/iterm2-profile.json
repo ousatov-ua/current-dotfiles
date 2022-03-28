@@ -1,5 +1,5 @@
 {
-  "Use Non-ASCII Font" : false,
+  "Custom Directory" : "No",
   "Tags" : [
 
   ],
@@ -10,14 +10,20 @@
     "Alpha Component" : 1,
     "Green Component" : 0.47843137383460999
   },
-  "Ansi 6 Color" : {
-    "Red Component" : 0,
+  "Ansi 7 Color" : {
+    "Red Component" : 0.9686274528503418,
     "Color Space" : "sRGB",
-    "Blue Component" : 0.69803923368453979,
+    "Blue Component" : 0.9686274528503418,
     "Alpha Component" : 1,
-    "Green Component" : 0.51372551918029785
+    "Green Component" : 0.9686274528503418
   },
-  "Normal Font" : "UbuntuMonoNerdFontCompleteM-Regular 14",
+  "Ansi 8 Color" : {
+    "Red Component" : 0.46666666865348816,
+    "Color Space" : "sRGB",
+    "Blue Component" : 0.46666666865348816,
+    "Alpha Component" : 1,
+    "Green Component" : 0.46666666865348816
+  },
   "Bold Color" : {
     "Red Component" : 0,
     "Color Space" : "sRGB",
@@ -25,7 +31,13 @@
     "Alpha Component" : 1,
     "Green Component" : 0
   },
-  "Transparency" : 0,
+  "Ansi 9 Color" : {
+    "Red Component" : 0.94117647409439087,
+    "Color Space" : "sRGB",
+    "Blue Component" : 0.31372550129890442,
+    "Alpha Component" : 1,
+    "Green Component" : 0.31372550129890442
+  },
   "Ansi 4 Color" : {
     "Red Component" : 0.19607843458652496,
     "Color Space" : "sRGB",
@@ -109,7 +121,7 @@
   "Custom Command" : "No",
   "ASCII Anti Aliased" : true,
   "Non Ascii Font" : "Monaco 12",
-  "Vertical Spacing" : 1.2,
+  "Vertical Spacing" : 1.01,
   "Use Bold Font" : true,
   "Option Key Sends" : 0,
   "Selected Text Color" : {
@@ -338,6 +350,8 @@
     "Alpha Component" : 1,
     "Green Component" : 0.47843137383460999
   },
+  "Transparency" : 0,
+  "Guid" : "F9C13EE0-A65D-407C-8100-0D85126AAE70",
   "Ansi 0 Color" : {
     "Red Component" : 0,
     "Color Space" : "sRGB",
@@ -345,8 +359,6 @@
     "Alpha Component" : 1,
     "Green Component" : 0
   },
-  "Guid" : "F9C13EE0-A65D-407C-8100-0D85126AAE70",
-  "Horizontal Spacing" : 1,
   "Link Color" : {
     "Red Component" : 0.19607843458652496,
     "Color Space" : "sRGB",
@@ -361,13 +373,16 @@
     "Alpha Component" : 1,
     "Green Component" : 0.21568627655506134
   },
-  "Ansi 2 Color" : {
-    "Red Component" : 0.26666668057441711,
+  "Horizontal Spacing" : 1,
+  "Use Non-ASCII Font" : false,
+  "Ansi 6 Color" : {
+    "Red Component" : 0,
     "Color Space" : "sRGB",
-    "Blue Component" : 0.15294118225574493,
+    "Blue Component" : 0.69803923368453979,
     "Alpha Component" : 1,
-    "Green Component" : 0.54901963472366333
+    "Green Component" : 0.51372551918029785
   },
+  "Normal Font" : "InconsolataNerdFontCompleteM-Medium 14",
   "Ansi 3 Color" : {
     "Red Component" : 0.68646001815795898,
     "Color Space" : "sRGB",
@@ -375,27 +390,12 @@
     "Alpha Component" : 1,
     "Green Component" : 0.48854317408676384
   },
-  "Ansi 7 Color" : {
-    "Red Component" : 0.9686274528503418,
+  "Ansi 2 Color" : {
+    "Red Component" : 0.26666668057441711,
     "Color Space" : "sRGB",
-    "Blue Component" : 0.9686274528503418,
+    "Blue Component" : 0.15294118225574493,
     "Alpha Component" : 1,
-    "Green Component" : 0.9686274528503418
+    "Green Component" : 0.54901963472366333
   },
-  "Ansi 8 Color" : {
-    "Red Component" : 0.46666666865348816,
-    "Color Space" : "sRGB",
-    "Blue Component" : 0.46666666865348816,
-    "Alpha Component" : 1,
-    "Green Component" : 0.46666666865348816
-  },
-  "Ansi 9 Color" : {
-    "Red Component" : 0.94117647409439087,
-    "Color Space" : "sRGB",
-    "Blue Component" : 0.31372550129890442,
-    "Alpha Component" : 1,
-    "Green Component" : 0.31372550129890442
-  },
-  "Custom Directory" : "No",
   "Right Option Key Sends" : 0
 }
