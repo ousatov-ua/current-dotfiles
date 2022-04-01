@@ -6,7 +6,8 @@ require("bufferline").setup{
 }
 
 vim.cmd([[
-nnoremap <C-l> :BufferLineCycleNext<CR>
-nnoremap <C-h> :BufferLineCyclePrev<CR>
+nnoremap ¬ :BufferLineCycleNext<CR>
+nnoremap ˙ :BufferLineCyclePrev<CR>
 nnoremap <space>gb :BufferLinePick<CR>
 ]])
+

@@ -15,9 +15,6 @@ nmap <space>ce <Action>(ToolWindowContextMenu)
 nmap <space>sc <Action>(HideSideWindows)
 nmap <space>vo <Action>(ActivateTerminalToolWindow)
 nmap <space>gg <Action>(ActivateCommitToolWindow)
-nmap <space>bc <Action>(CloseEditor)
-nmap <space>ba <Action>(CloseAllEditors)
-nmap <space>bo <Action>(CloseAllEditorsButActive)
 
 " Copy-paste
 set clipboard+=unnamed
@@ -49,6 +46,9 @@ nmap <leader>fi <Action>(OptimizeImports)
 nmap <leader>jj <Action>(QuickJavaDoc)
 nmap <leader>ee <Action>(ShowErrorDescription)
 nmap <leader>ef <Action>(ShowIntentionActions)
+nmap <leader>bo <Action>(CloseAllEditorsButActive)
+nmap <space>bc <Action>(CloseEditor)
+nmap <leader>ba <Action>(CloseAllEditors)
 nmap <leader>rn <Action>(RenameElement)
 
 "Find everywhere
@@ -56,4 +56,5 @@ nmap <leader>fr <Action>(SearchEverywhere)
 
 " One more command: Maven.Reimport
 nmap <leader>pu <Action>(Maven.ReimportProject)
+
 
