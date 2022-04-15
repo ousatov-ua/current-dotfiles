@@ -24,15 +24,16 @@ Use from ./other/fonts/
 or
 `brew tap homebrew/cask-fonts`
 
-Currently, using IBM Plex Mono. 
-
-`brew install font-blex-mono-nerd-font`
-
-Another good options: IBM Plex Mono, Victor Mono
+Currently, using VictorMono-Nerd.
 
 Can be installed from `other/fonts/VictorMono-Nerd.zip` or via brew:
 
 `brew install --cask font-victor-mono-nerd-font`
+
+`brew install font-blex-mono-nerd-font`
+
+Another good options: IBM Plex Mono
+
 
 Jetbrains: Noto Sans mono (<semi> condensed regular, <semi> condensed semibold)
 
