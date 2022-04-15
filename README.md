@@ -22,7 +22,9 @@ Run this inside `nvim` to install all plugins:
 
 Use from ./other/fonts/
 
-Victor mono is the best for now Kitty
+Currently, using IBM Plex Mono
+
+Another good options: IBM Plex Mono, Victor Mono
 
 Can be installed from `other/fonts/VictorMono-Nerd.zip` or via brew:
 
