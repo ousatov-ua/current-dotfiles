@@ -21,14 +21,16 @@ Run this inside `nvim` to install all plugins:
 <https://github.com/ryanoasis/nerd-fonts>
 
 Use from ./other/fonts/
+or
+`brew tap homebrew/cask-fonts`
 
-Currently, using IBM Plex Mono
+Currently, using IBM Plex Mono. 
+
+`brew install font-blex-mono-nerd-font`
 
 Another good options: IBM Plex Mono, Victor Mono
 
 Can be installed from `other/fonts/VictorMono-Nerd.zip` or via brew:
-
-`brew tap homebrew/cask-fonts`
 
 `brew install --cask font-victor-mono-nerd-font`
 
