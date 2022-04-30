@@ -8,7 +8,6 @@ require'nvim-tree'.setup {
   view = {
     width = 50,
     side = "left",
-    auto_resize = false,
     mappings = {
       custom_only = false,
       list = list
