@@ -3,7 +3,7 @@
 ## Key repeat
 
 defaults write -g InitialKeyRepeat -int 10 # normal minimum is 15 (225 ms)
-defaults write -g KeyRepeat -int 2 # normal minimum is 2 (30 ms)
+defaults write -g KeyRepeat -int 1 # normal minimum is 2 (30 ms)
 
 ## Install neovim
 
@@ -29,7 +29,9 @@ Use from ./other/fonts/
 or
 `brew tap homebrew/cask-fonts`
 
-Currently, using BlexMono Nerd (and IBM Plex mono for Idea)
+Currently, using Comic Code Nerd (and Comic Code)
+Patched versions are in iCloud. 
+Firts please just install any nerd font (for some reasons otherwise there are some visual gaps for Comic Code which was manually patched)
 
 `brew install font-blex-mono-nerd-font` or from archive
 
