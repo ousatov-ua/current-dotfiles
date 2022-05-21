@@ -7,6 +7,7 @@ require('tree-sitter-config')
 require('nvim-tree-config')
 require('colorizer-config')
 require('vgit-config')
+require('git-signs-config')
 require('lualine-config')
 require('bufferline-config')
 
