@@ -55,10 +55,12 @@ return require('packer').startup(function()
     use 'hrsh7th/cmp-cmdline'
     use 'windwp/nvim-autopairs'
     use 'hrsh7th/nvim-cmp'
-    use "saadparwaiz1/cmp_luasnip" -- snippet completions
+    use 'saadparwaiz1/cmp_luasnip' -- snippet completions
 
     -- snippets
-    use "L3MON4D3/LuaSnip" --snippet engine
+    use {
+        'L3MON4D3/LuaSnip'
+    }
     use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
     -- Colorizer
     use 'norcalli/nvim-colorizer.lua'
