@@ -82,5 +82,7 @@ nnoremap x "_d
 nnoremap <space>bc :bp\|bd #<CR>
 command! Bonly silent execute "%bd!|norm <C-O>"
 nnoremap <space>bo :Bonly<CR>
+
+let g:python3_host_prog = expand('~/opt/python3_nvim/bin/python')
 ]])
 
