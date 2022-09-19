@@ -24,6 +24,18 @@ Run this inside `nvim` to install all plugins:
 
 `:PackerInstall`
 
+## Python
+
+Create venv for neovim
+
+`python3 -m venv ~/opt/python3_nvim`
+`source ~/opt/python3_nvim/bin/activate`
+`python3 -m pip install pynvim`
+
+Path to python is specified in nvim config:
+
+`let g:python3_host_prog = expand('~/opt/python3_nvim/bin/python')`
+
 ## Nerd fonts (Use it!)
 
 <https://github.com/ryanoasis/nerd-fonts>
