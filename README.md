@@ -99,3 +99,26 @@ Install kitty
 To check:
 
 `sudo defaults read bluetoothaudiod`
+
+# DoH
+`brew install cloudflared`
+
+vim /usr/local/etc/cloudflared/config.yml
+
+```yaml
+proxy-dns: true
+proxy-dns-upstream:
+  - https://1.1.1.1/dns-query
+  - https://1.0.0.1/dns-query
+logDirectory: /var/log/cloudflared
+```
+
+Install as system service:
+
+`sudo cloudflared service install`
+
+Restart:
+
+`sudo cloudflared restart`
+
+
