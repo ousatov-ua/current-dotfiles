@@ -1,15 +1,3 @@
-# Dotfiles
-
-## Key repeat
-
-`defaults write -g InitialKeyRepeat -int 12 # normal minimum is 15 (225 ms)`
-
-`defaults write -g KeyRepeat -int 2 # normal minimum is 2 (30 ms)`
-
-`defaults write -g ApplePressAndHoldEnabled -bool false`
-
-## Install neovim
-
 Using `brew`:
 
 HEAD is currently needed for tree-sitter
@@ -121,4 +109,8 @@ Restart:
 
 `sudo cloudflared restart`
 
+# Iperf3
+`brew install iperf3`
 
+Download `iperf3 -R -c iperf.volia.net -t60 -i10 -P4`
+Upload `iperf3 -c iperf.volia.net -t60 -i10 -P4`
