@@ -110,6 +110,8 @@ Restart:
 `sudo cloudflared restart`
 
 # Iperf3
+This is a tool for measuring speed.
+
 `brew install iperf3`
 
 Download `iperf3 -R -c iperf.volia.net -t60 -i10 -P4`
