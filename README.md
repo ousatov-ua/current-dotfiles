@@ -109,6 +109,11 @@ Restart:
 
 `sudo cloudflared restart`
 
+Uninstall:
+
+`sudo cloudflared service uninstall`
+`brew uninstall cloudflared`
+
 # Iperf3
 This is a tool for measuring speed.
 
