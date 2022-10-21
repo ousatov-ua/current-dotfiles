@@ -123,13 +123,14 @@ Download `iperf3 -R -c iperf.volia.net -t60 -i10 -P4`
 Upload `iperf3 -c iperf.volia.net -t60 -i10 -P4`
 
 # Dnsmasq
-config
+You will need to remove `systemd-resolved` first
+
+## Config
+
+vim /etc/dnsmasq.conf
 
 ```yaml
 interface=eth0
-#Cloudflare's nameservers
-#server=1.1.1.1
-#server=1.0.0.1
 #Adguard dns
 server=94.140.14.14
 server=94.140.15.15
