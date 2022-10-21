@@ -139,12 +139,62 @@ vim /etc/dnsmasq.conf
 ```yaml
 interface=eth0
 #Adguard dns
-server=94.140.14.14
-server=94.140.15.15
+#server=94.140.14.14
+#server=94.140.15.15
+#Cloudflare DoH utility (will map all dns request to it)
+server=127.0.0.1#5053
 cache-size=5000
 local-ttl=600
 min-cache-ttl=3600
 ```
+Install cloudflared 
+
+https://pkg.cloudflare.com/index.html
+
+Ubuntu 22.04 LTS (Jammy Jellyfish)
+
+# Add cloudflare gpg key
+`sudo mkdir -p --mode=0755 /usr/share/keyrings`
+`curl -fsSL https://pkg.cloudflare.com/cloudflare-main.gpg | sudo tee /usr/share/keyrings/cloudflare-main.gpg >/dev/null`
+
+# Add this repo to your apt repositories
+`echo 'deb [signed-by=/usr/share/keyrings/cloudflare-main.gpg] https://pkg.cloudflare.com/cloudflared jammy main' | sudo tee /etc/apt/sources.list.d/cloudflared.list`
+
+# install cloudflared
+`sudo apt-get update && sudo apt-get install cloudflared`
+
+Because you will want the proxy to run on a non-privileged port, you can create a separate service account, under which the proxy then runs:
+
+`# useradd -s /usr/sbin/nologin -r -M cloudflared`
+`# chown cloudflared:cloudflared /usr/local/bin/cloudflared`
+For the service to mesh seamlessly with systemd, you need to create a suitable /etc/systemd/system/cloudflared.service Unit file (Listing 2). The /etc/default/cloudflared configuration file,
+
+Listing 2
+(Systemd Unit)
+
+
+```yaml
+[Unit]
+Description=cloudflared DNS over HTTPS proxy
+After=syslog.target network-online.target
+[Service]
+Type=simple
+User=cloudflared
+EnvironmentFile=/etc/default/cloudflared
+ExecStart=/usr/local/bin/cloudflared $CLOUDFLARED_OPTS
+Restart=on-failure
+RestartSec=10
+KillMode=process
+[Install]
+WantedBy=multi-user.target
+```
+
+Content of /etc/default/cloudflared:
+
+CLOUDFLARED_OPTS="proxy-dns --upstream https://1.1.1.1/dns-query --upstream https://1.0.0.1/dns-query --port 5053"
+
+Start cloudflared:
+systemctl enable --now cloudflared
 
 Restart on ubuntu:
 
