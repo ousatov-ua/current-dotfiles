@@ -127,11 +127,15 @@ config
 
 ```yaml
 interface=eth0
-#Cloudflare's nameservers 
-server=1.1.1.1
-server=1.0.0.1
+#Cloudflare's nameservers
+#server=1.1.1.1
+#server=1.0.0.1
+#Adguard dns
+server=94.140.14.14
+server=94.140.15.15
 cache-size=5000
-#local-ttl=600
+local-ttl=600
+min-cache-ttl=3600
 ```
 
 Restart on ubuntu:
