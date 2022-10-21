@@ -125,6 +125,13 @@ Upload `iperf3 -c iperf.volia.net -t60 -i10 -P4`
 # Dnsmasq
 You will need to remove `systemd-resolved` first
 
+Install dnsmasq. Check that is is running
+
+`sudo ss -ltnp`
+
+State            Recv-Q           Send-Q                       Local Address:Port                       Peer Address:Port           Process                                     
+LISTEN           0                32                                 0.0.0.0:53                              0.0.0.0:*               users:(("dnsmasq",pid=610,fd=5))
+
 ## Config
 
 vim /etc/dnsmasq.conf
