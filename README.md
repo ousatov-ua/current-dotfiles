@@ -142,6 +142,9 @@ listen-address=::1,127.0.0.1,192.46.234.72
 interface=eth0
 
 #DNS
+#AdGuard dns
+server=94.140.14.14
+server=94.140.15.15
 #Cloudflare dns
 #server=1.1.1.1
 #server=1.0.0.1
@@ -149,8 +152,18 @@ interface=eth0
 #server=208.67.222.123
 #server=208.67.220.123
 #Quad9
-server=9.9.9.9
-server=149.112.112.112
+#server=9.9.9.9
+#server=149.112.112.112
+#Level 3
+#server=209.244.0.3
+#server=209.244.0.4
+#server=4.2.2.1
+#server=4.2.2.2
+#server=4.2.2.3
+#server=4.2.2.4
+#Verisign
+#server=64.6.64.6
+#server=64.6.65.6
 
 #Caching
 cache-size=5000
