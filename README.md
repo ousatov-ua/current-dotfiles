@@ -121,3 +121,20 @@ This is a tool for measuring speed.
 
 Download `iperf3 -R -c iperf.volia.net -t60 -i10 -P4`
 Upload `iperf3 -c iperf.volia.net -t60 -i10 -P4`
+
+# Dnsmasq
+config
+
+```yaml
+interface=eth0
+#Cloudflare's nameservers 
+server=1.1.1.1
+server=1.0.0.1
+cache-size=5000
+#local-ttl=600
+```
+
+Restart on ubuntu:
+
+`sudo systemctl restart dnsmasq.service`
+
