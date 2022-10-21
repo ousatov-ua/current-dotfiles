@@ -142,3 +142,7 @@ Restart on ubuntu:
 
 `sudo systemctl restart dnsmasq.service`
 
+Check status:
+
+`systemctl status dnsmasq`
+
