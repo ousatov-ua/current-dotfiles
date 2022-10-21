@@ -137,12 +137,22 @@ LISTEN           0                32                                 0.0.0.0:53 
 vim /etc/dnsmasq.conf
 
 ```yaml
+#Address
+listen-address=::1,127.0.0.1,192.46.234.72
 interface=eth0
-#Adguard dns
-#server=94.140.14.14
-#server=94.140.15.15
-#Cloudflare DoH utility (will map all dns request to it)
-server=127.0.0.1#5053
+
+#DNS
+#Cloudflare dns
+#server=1.1.1.1
+#server=1.0.0.1
+#OpenDNS family
+#server=208.67.222.123
+#server=208.67.220.123
+#Quad9
+server=9.9.9.9
+server=149.112.112.112
+
+#Caching
 cache-size=5000
 local-ttl=600
 min-cache-ttl=3600
