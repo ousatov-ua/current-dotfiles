@@ -166,7 +166,7 @@ server=94.140.15.15
 #server=64.6.65.6
 
 #Caching
-cache-size=5000
+cache-size=10000
 local-ttl=600
 min-cache-ttl=3600
 ```
