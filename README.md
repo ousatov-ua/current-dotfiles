@@ -132,7 +132,7 @@ Install dnsmasq. Check that is is running
 State            Recv-Q           Send-Q                       Local Address:Port                       Peer Address:Port           Process                                     
 LISTEN           0                32                                 0.0.0.0:53                              0.0.0.0:*               users:(("dnsmasq",pid=610,fd=5))
 
-## Config
+## Dnsmasq
 
 ### MacOSX
 $ brew install dnsmasq
