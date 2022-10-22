@@ -107,7 +107,7 @@ Install as system service:
 
 Restart:
 
-`sudo cloudflared restart`
+`sudo cloudflared restart` - this will not restart cloudflared service
 
 Uninstall:
 
