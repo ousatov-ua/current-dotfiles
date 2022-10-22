@@ -134,6 +134,20 @@ LISTEN           0                32                                 0.0.0.0:53 
 
 ## Config
 
+### MacOSX
+$ brew install dnsmasq
+$ vim /usr/local/etc/dnsmasq.conf
+
+# Copy the daemon configuration file into place.
+$ sudo cp $(brew list dnsmasq | grep /homebrew.mxcl.dnsmasq.plist$) /Library/LaunchDaemons/
+$ sudo launchctl unload /Library/LaunchDaemons/homebrew.mxcl.dnsmasq.plist
+$ sudo launchctl load /Library/LaunchDaemons/homebrew.mxcl.dnsmasq.plist
+$ dscacheutil -flushcache
+
+$ sudo launchctl stop homebrew.mxcl.dnsmasq
+$ sudo launchctl start homebrew.mxcl.dnsmasq
+
+### Linux
 vim /etc/dnsmasq.conf
 
 ```yaml
@@ -170,6 +184,8 @@ cache-size=5000
 local-ttl=600
 #min-cache-ttl=1500 #it may not work in config but only as launch argument
 ```
+
+Next are optional (I don't use it)
 Install cloudflared 
 
 https://pkg.cloudflare.com/index.html
