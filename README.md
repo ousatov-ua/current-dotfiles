@@ -168,7 +168,7 @@ server=94.140.15.15
 #Caching
 cache-size=10000
 local-ttl=600
-min-cache-ttl=3600
+min-cache-ttl=1500 #it may not work in config but only as launch argument
 ```
 Install cloudflared 
 
