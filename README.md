@@ -185,7 +185,10 @@ local-ttl=600
 #min-cache-ttl=1500 #it may not work in config but only as launch argument
 ```
 
-Next are optional (I don't use it)
+#### Use DoH with dnsmasq
+
+This is the variant to proxy requests from dnsmasq to cloudflared (DoH). Please check PDF file in root.
+Configured it on Ubuntu - works fine.
 Install cloudflared 
 
 https://pkg.cloudflare.com/index.html
@@ -243,3 +246,30 @@ Check status:
 
 `systemctl status dnsmasq`
 
+Sh file for renice:
+
+```sh
+mode=$1
+pid_cldf=$(pidof cloudflared)
+pid_dnsmasq=$(pidof dnsmasq)
+echo "Pid of cloudflared $pid_cldf"
+echo "Pid of dnsmasq' $pid_dnsmasq"
+
+echo "Current statistics"
+eval "ps ax -o pid,ni,cmd | grep cloudflared"
+eval "ps ax -o pid,ni,cmd | grep dnsmasq"
+
+case $mode in
+        renice)
+                sudo renice -n -15 -p $pid_cldf
+                sudo renice -n -15 -p $pid_dnsmasq
+                ;;
+        info)
+                eval "ps ax -o pid,ni,cmd | grep cloudflared"
+                eval "ps ax -o pid,ni,cmd | grep dnsmasq"
+                ;;
+        *)
+                echo "Possible options: info | renice <value>"
+                ;;
+esac
+```
