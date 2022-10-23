@@ -233,10 +233,16 @@ WantedBy=multi-user.target
 
 Content of /etc/default/cloudflared:
 
+```
 CLOUDFLARED_OPTS="proxy-dns --upstream https://1.1.1.1/dns-query --upstream https://1.0.0.1/dns-query --port 5053"
+```
 
 Start cloudflared:
 systemctl enable --now cloudflared
+
+Check ports:
+
+`ss -ltnp`
 
 Restart on ubuntu:
 
