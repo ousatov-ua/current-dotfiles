@@ -283,4 +283,10 @@ esac
 # Ubuntu 
 Stop GUI (22.04 LTS)
 
+Disable GDM on startup:
+
+`systemctl disable gdm.service`
+
+Stop GDM:
+
 `sudo service gdm stop`
