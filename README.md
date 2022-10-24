@@ -279,3 +279,8 @@ case $mode in
                 ;;
 esac
 ```
+
+# Ubuntu 
+Stop GUI (22.04 LTS)
+
+`sudo service gdm stop`
