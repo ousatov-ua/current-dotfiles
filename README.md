@@ -159,8 +159,8 @@ interface=eth0
 
 #DNS
 #AdGuard dns
-server=94.140.14.14
-server=94.140.15.15
+#server=94.140.14.14
+#server=94.140.15.15
 #Cloudflare dns
 #server=1.1.1.1
 #server=1.0.0.1
@@ -180,6 +180,8 @@ server=94.140.15.15
 #Verisign
 #server=64.6.64.6
 #server=64.6.65.6
+#Point to cloudflared deamon
+server=127.0.0.1#5053
 
 #Caching
 cache-size=5000
