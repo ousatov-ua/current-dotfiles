@@ -264,6 +264,8 @@ Check status:
 
 `systemctl status dnsmasq`
 
+Don't forget to remove any nameservers from resolve.conf
+
 Sh file for renice:
 
 ```sh
