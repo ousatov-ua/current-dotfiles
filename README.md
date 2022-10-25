@@ -296,6 +296,7 @@ esac
 
 # Ubuntu 
 Stop GUI (22.04 LTS)
+Please pay attention that monitor will not turn off by itself after that
 
 Disable GDM on startup:
 
