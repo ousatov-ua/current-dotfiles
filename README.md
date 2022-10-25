@@ -139,6 +139,7 @@ $ brew install dnsmasq
 $ vim /usr/local/etc/dnsmasq.conf
 
 # Copy the daemon configuration file into place.
+```
 $ sudo cp $(brew list dnsmasq | grep /homebrew.mxcl.dnsmasq.plist$) /Library/LaunchDaemons/
 $ sudo launchctl unload /Library/LaunchDaemons/homebrew.mxcl.dnsmasq.plist
 $ sudo launchctl load /Library/LaunchDaemons/homebrew.mxcl.dnsmasq.plist
@@ -146,9 +147,10 @@ $ dscacheutil -flushcache
 
 $ sudo launchctl stop homebrew.mxcl.dnsmasq
 $ sudo launchctl start homebrew.mxcl.dnsmasq
+```
 
 ### Linux
-vim /etc/dnsmasq.conf
+`vim /etc/dnsmasq.conf`
 
 ```yaml
 #Address
@@ -189,7 +191,9 @@ local-ttl=600
 
 This is the variant to proxy requests from dnsmasq to cloudflared (DoH). Please check PDF file in root.
 Configured it on Ubuntu - works fine.
-Install cloudflared 
+# Install cloudflared 
+
+Source:
 
 https://pkg.cloudflare.com/index.html
 
@@ -197,18 +201,22 @@ Ubuntu 22.04 LTS (Jammy Jellyfish)
 
 # Add cloudflare gpg key
 `sudo mkdir -p --mode=0755 /usr/share/keyrings`
+
 `curl -fsSL https://pkg.cloudflare.com/cloudflare-main.gpg | sudo tee /usr/share/keyrings/cloudflare-main.gpg >/dev/null`
 
 # Add this repo to your apt repositories
 `echo 'deb [signed-by=/usr/share/keyrings/cloudflare-main.gpg] https://pkg.cloudflare.com/cloudflared jammy main' | sudo tee /etc/apt/sources.list.d/cloudflared.list`
 
 # install cloudflared
+
 `sudo apt-get update && sudo apt-get install cloudflared`
 
 Because you will want the proxy to run on a non-privileged port, you can create a separate service account, under which the proxy then runs:
 
 `# useradd -s /usr/sbin/nologin -r -M cloudflared`
+
 `# chown cloudflared:cloudflared /usr/local/bin/cloudflared`
+
 For the service to mesh seamlessly with systemd, you need to create a suitable /etc/systemd/system/cloudflared.service Unit file (Listing 2). The /etc/default/cloudflared configuration file,
 
 Listing 2
@@ -243,6 +251,10 @@ systemctl enable --now cloudflared
 Check ports:
 
 `ss -ltnp`
+
+Dnsmasq:
+
+`server=127.0.0.1#5053`
 
 Restart on ubuntu:
 
