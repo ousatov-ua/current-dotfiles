@@ -307,3 +307,7 @@ Disable GDM on startup:
 Stop GDM:
 
 `sudo service gdm stop`
+
+# Tricks
+1) Trurn off display on server:
+ `sudo vim /etc/default/grub`
