@@ -311,3 +311,7 @@ Stop GDM:
 # Tricks
 1) Trurn off display on server:
  `sudo vim /etc/default/grub`
+  `GRUB_CMDLINE_LINUX_DEFAULT="quiet splash ipv6.disable=1 consoleblank=10"`
+  `GRUB_CMDLINE_LINUX="ipv6.disable=1"`
+  `sudo update-grub`
+  
