@@ -318,3 +318,73 @@ Stop GDM:
   
   `sudo update-grub`
   
+=======
+# Knot-resolver
+Kresd.conf:
+```
+-- SPDX-License-Identifier: CC0-1.0
+-- vim:syntax=lua:set ts=4 sw=4:
+-- Refer to manual: https://knot-resolver.readthedocs.org/en/stable/
+
+-- Network interface configuration
+net.listen('0.0.0.0', 53, { kind = 'dns' })
+--net.listen('127.0.0.1', 853, { kind = 'tls' })
+--net.listen('127.0.0.1', 443, { kind = 'doh2' })
+--net.listen('::1', 53, { kind = 'dns', freebind = true })
+--net.listen('::1', 853, { kind = 'tls', freebind = true })
+--net.listen('::1', 443, { kind = 'doh2' })
+
+-- Load useful modules
+modules = {
+        'hints > iterate',  -- Allow loading /etc/hosts or custom root hints
+        -- 'stats',            -- Track internal statistics
+        'predict',          -- Prefetch expiring/frequent records
+}
+
+-- policy.add(policy.all(policy.FORWARD({'45.90.28.226', '45.90.30.226'})))
+
+policy.add(policy.all(policy.TLS_FORWARD({
+    {'45.90.28.0', hostname='1b96d3.dns.nextdns.io'},
+    {'45.90.30.0', hostname='1b96d3.dns.nextdns.io'}
+})))
+
+-- Cache size
+cache.size = 100 * MB
+```
+Grub:
+```
+ If you change this file, run 'update-grub' afterwards to update
+# /boot/grub/grub.cfg.
+# For full documentation of the options in this file, see:
+#   info -f grub -n 'Simple configuration'
+
+GRUB_DEFAULT=0
+GRUB_TIMEOUT_STYLE=hidden
+GRUB_TIMEOUT=0
+GRUB_DISTRIBUTOR=`lsb_release -i -s 2> /dev/null || echo Debian`
+GRUB_CMDLINE_LINUX_DEFAULT="ipv6.disable=1 consoleblank=20"
+GRUB_CMDLINE_LINUX=""
+
+# Uncomment to enable BadRAM filtering, modify to suit your needs
+# This works with Linux (no patch required) and with any kernel that obtains
+# the memory map information from GRUB (GNU Mach, kernel of FreeBSD ...)
+#GRUB_BADRAM="0x01234567,0xfefefefe,0x89abcdef,0xefefefef"
+
+# Uncomment to disable graphical terminal (grub-pc only)
+#GRUB_TERMINAL=console
+
+# The resolution used on graphical terminal
+# note that you can use only modes which your graphic card supports via VBE
+# you can see them in real GRUB with the command `vbeinfo'
+#GRUB_GFXMODE=640x480
+
+# Uncomment if you don't want GRUB to pass "root=UUID=xxx" parameter to Linux
+#GRUB_DISABLE_LINUX_UUID=true
+
+# Uncomment to disable generation of recovery mode menu entries
+#GRUB_DISABLE_RECOVERY="true"
+
+# Uncomment to get a beep at grub start
+#GRUB_INIT_TUNE="480 440 1"
+```
+
